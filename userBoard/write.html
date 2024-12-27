@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>게시판 상세 페이지</title>
+    <title>게시글 작성 페이지</title>
     <style>
       #content {
         max-width: 1200px;
@@ -13,7 +13,6 @@
         width: 60%;
         margin: 50px auto;
       }
-      ul,
       form {
         width: 60%;
         margin: 0 auto;
@@ -21,18 +20,15 @@
         flex-direction: column;
         gap: 20px;
       }
-      li {
-        list-style: none;
-      }
-      li:nth-of-type(1) {
+      input:nth-of-type(1) {
         height: 30px;
         font-weight: 800px;
         font-size: 18px;
       }
-      li:nth-of-type(2) {
+      input:nth-of-type(2) {
         height: 30px;
       }
-      li:nth-of-type(3) {
+      input:nth-of-type(3) {
         height: 100px;
       }
       button {
@@ -43,25 +39,16 @@
         background: black;
         color: white;
       }
-      a {
-        text-decoration: none;
-        color: white;
-      }
     </style>
   </head>
   <body>
     <div id="content">
-      <h2>상세 페이지</h2>
-      <ul class="content-box">
-        <li>{{ list.title }}</li>
-        <li>{{ list.writer }}</li>
-        <li>{{ list.content }}</li>
-      </ul>
-      <form type="post" action="/delete/{{list.id}}">
-        <button>
-          <a href="/modify/{{ list.id }}">수정</a>
-        </button>
-        <button type="submit">삭제</button>
+      <h2>게시글 작성</h2>
+      <form method="post" action="/write">
+        <input type="text" name="title" placeholder="제목" />
+        <input type="text" name="writer" placeholder="작성자" />
+        <input type="text" name="content" placeholder="내용" />
+        <button type="submit">등록</button>
       </form>
     </div>
   </body>
