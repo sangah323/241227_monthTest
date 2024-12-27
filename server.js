@@ -1,5 +1,12 @@
 const express = require("express");
+const nunjucks = require("nunjucks");
 const app = express();
+
+app.set("view engine", "html");
+
+nunjucks.configure("userBoard", { express: app });
+
+app.use(express.urlencoded({ extended: true }));
 
 const boardList = [
   {
