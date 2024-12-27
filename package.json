@@ -1,0 +1,16 @@
+{
+  "name": "241227_monthtest",
+  "version": "1.0.0",
+  "description": "241227 월별 평가 - HTTP 통신 프로토콜 구현(Express를 활용한 게시판 CRUD 구현)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nunjucks": "^3.2.4"
+  }
+}
