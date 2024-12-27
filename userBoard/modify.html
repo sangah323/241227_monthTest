@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 수정 페이지</title>
+  </head>
+  <body>
+    <div id="content">
+        <form method="post" action="/modify/{{ list.id }}">
+          <input type="text" name="title" value="{{ list.title }}" />
+          <input type="text" name="writer" value="{{ list.writer }}" />
+          <input type="text" name="content" value="{{ list.content }}" />
+          <button type="submit">수정</button>
+        </form>
+  </body>
+</html>
