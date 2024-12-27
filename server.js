@@ -12,6 +12,10 @@ const boardList = [
   },
 ];
 
+app.get("/write", (req, res) => {
+  res.sendFile(__dirname + "/userBoard/wirte.html");
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
