@@ -4,8 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>게시글 수정 페이지</title>
+    <style>
+      #content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      h2 {
+        width: 60%;
+        margin: 50px auto;
+      }
+      form {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      input:nth-of-type(1) {
+        height: 30px;
+        font-weight: 800px;
+        font-size: 18px;
+      }
+      input:nth-of-type(2) {
+        height: 30px;
+      }
+      input:nth-of-type(3) {
+        height: 100px;
+      }
+      button {
+        width: 40%;
+        height: 30px;
+        margin: 0 auto;
+        border: none;
+        background: black;
+        color: white;
+      }
+    </style>
   </head>
   <body>
+    <h2>수정 페이지</h2>
     <div id="content">
         <form method="post" action="/modify/{{ list.id }}">
           <input type="text" name="title" value="{{ list.title }}" />
