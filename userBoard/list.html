@@ -15,7 +15,9 @@
       {% for item in boardList %}
       <ul>
         <li>{{ item.writer }}</li>
-        <li>{{ item.title }}</li>
+        <li>
+          <a href="./view?id={{ item.id }}"> {{ item.title }} </a>
+        </li>
         <li>{{ item.hit }}</li>
       </ul>
       {% endfor %}

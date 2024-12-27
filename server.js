@@ -17,6 +17,14 @@ const boardList = [
     content: "6시에 집갈거임",
     hit: 0,
   },
+  {
+    id: 2,
+    user_id: "whtkddk1234",
+    writer: "조상아",
+    title: "우리 인생",
+    content: "화이팅,,ㅎ",
+    hit: 0,
+  },
 ];
 
 app.get("/write", (req, res) => {
@@ -37,6 +45,12 @@ app.post("/write", (req, res) => {
 
 app.get("/list", (req, res) => {
   res.render("./list.html", { boardList });
+});
+
+app.get("/view", (req, res) => {
+  const { id } = req.query;
+  const list = boardList.find((value) => value.id === parseInt(id));
+  res.render("./view.html", { list });
 });
 
 app.listen(3000, () => {
