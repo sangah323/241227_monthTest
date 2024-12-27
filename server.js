@@ -16,6 +16,18 @@ app.get("/write", (req, res) => {
   res.sendFile(__dirname + "/userBoard/wirte.html");
 });
 
+app.post("/write", (req, res) => {
+  const { writer, title, content } = req.body;
+  boardList.push({
+    id: boardList.length + 1,
+    user_id: "whtkddk",
+    writer: writer,
+    title: title,
+    content: content,
+    hit: 0,
+  });
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
