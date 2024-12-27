@@ -63,6 +63,12 @@ app.get("/delete/:id", (req, res) => {
   res.redirect("/list");
 });
 
+app.get("/modify/:id", (req, res) => {
+  const id = req.params.id;
+  const list = boardList.find((value) => value.id === parseInt(id));
+  res.render("./modify.html", { list });
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
