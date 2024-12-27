@@ -35,6 +35,10 @@ app.post("/write", (req, res) => {
   });
 });
 
+app.get("/list", (req, res) => {
+  res.render("./list.html", { boardList });
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
