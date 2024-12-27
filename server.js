@@ -69,6 +69,20 @@ app.get("/modify/:id", (req, res) => {
   res.render("./modify.html", { list });
 });
 
+// modify 기능 수정 필요
+app.post("./modify/:id", (req, res) => {
+  const id = req.params.id;
+  const { writer, title, content } = req.body;
+  const index = boardList.findIndex((value) => value.id === parseInt(id));
+  if (index !== 1) {
+    res.status(404).send("해당 아이디를 찾지 못함");
+  }
+  boardList[index].title = title;
+  boardList[index].writer = writer;
+  boardList[index].content = content;
+  res.redirect(`/view?id=${id}`);
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
