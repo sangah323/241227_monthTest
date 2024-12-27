@@ -53,6 +53,16 @@ app.get("/view", (req, res) => {
   res.render("./view.html", { list });
 });
 
+app.get("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  const index = boardList.findIndex((value) => value.id === parseInt(id));
+  if (index !== 1) {
+    res.status(404).send("게시글이 존재하지 않음");
+  }
+  boardList.splice(index, 1);
+  res.redirect("/list");
+});
+
 app.listen(3000, () => {
   console.log("server start");
 });
