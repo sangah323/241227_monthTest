@@ -71,7 +71,7 @@ app.get("/modify/:id", (req, res) => {
 });
 
 // modify 기능 수정 필요
-app.post("./modify/:id", (req, res) => {
+app.post("/modify/:id", (req, res) => {
   const id = req.params.id;
   const { writer, title, content } = req.body;
   const index = boardList.findIndex((value) => value.id === parseInt(id));
@@ -81,7 +81,7 @@ app.post("./modify/:id", (req, res) => {
   boardList[index].title = title;
   boardList[index].writer = writer;
   boardList[index].content = content;
-  res.redirect(`/view?id=${id}`);
+  res.redirect(`/view/${id}`);
 });
 
 app.listen(3000, () => {
