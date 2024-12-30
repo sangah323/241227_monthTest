@@ -13,6 +13,14 @@
         width: 60%;
         margin: 50px auto;
       }
+      .go-list {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 800;
+        font-size: 20px;
+        margin: 20px;
+        color: red;
+      }
       ul,
       form {
         width: 60%;
@@ -52,6 +60,7 @@
   <body>
     <div id="content">
       <h2>상세 페이지</h2>
+      <a class="go-list" href="/list">목록</a>
       <ul class="content-box">
         <li>{{ list.title }}</li>
         <li>{{ list.writer }}</li>

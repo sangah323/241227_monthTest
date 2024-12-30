@@ -13,7 +13,14 @@
         width: 60%;
         margin: 50px auto;
       }
-
+      .go-write {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: 800;
+        font-size: 20px;
+        margin: 20px;
+        color: red;
+      }
       ul {
         width: 60%;
         margin: 0 auto;
@@ -22,22 +29,26 @@
       }
       .content-list {
         border-bottom: 1px solid black;
-        padding: 20px 0;
+        padding-left: 30px;
+        padding-bottom: 10px;
         font-weight: 800;
         font-size: 20px;
       }
       li {
         list-style: none;
+        margin-top: 5px;
       }
       a {
         text-decoration: none;
         color: black;
+        font-weight: 600;
       }
     </style>
   </head>
   <body>
     <div id="content">
       <h2>리스트 페이지</h2>
+      <a class="go-write" href="/write">글쓰기</a>
       <ul class="content-list">
         <li>작성자</li>
         <li>제목</li>
