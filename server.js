@@ -28,7 +28,7 @@ const boardList = [
 ];
 
 app.get("/write", (req, res) => {
-  res.sendFile(__dirname + "/userBoard/wirte.html");
+  res.sendFile(__dirname + "/userBoard/write.html");
 });
 
 app.post("/write", (req, res) => {
@@ -41,15 +41,16 @@ app.post("/write", (req, res) => {
     content: content,
     hit: 0,
   });
+  res.redirect(`view/${boardList.length}`);
 });
 
 app.get("/list", (req, res) => {
   res.render("./list.html", { boardList });
 });
 
-app.get("/view", (req, res) => {
-  const { id } = req.query;
-  const list = boardList.find((value) => value.id === parseInt(id));
+app.get("/view/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const list = boardList.find((value) => value.id === id);
   res.render("./view.html", { list });
 });
 
